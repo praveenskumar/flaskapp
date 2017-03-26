@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+</style>
+</head>
+<body>
+<div style="padding: 41px">
+<h2> Order Details</h2>
+<table style="width:100%">
+  <tr>
+    <th>Order ID</th>
+    <th>Product Name</th>
+    <th>Order Status</th>
+    <th>Product URL</th>
+    <th>Cost Price(Rs.)</th>
+  </tr>
+  {% for order in orders %}
+  <tr>
+    <td>{{ order.order_id }}</td>
+    <td>{{ order.product_name }}</td>
+    <td>{{ order.order_status }}</td>
+    <td>{{ order.product_url }}</td>
+    <td>{{ order.cost_price }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+</body>
+</html>
+
+{% endblock %}

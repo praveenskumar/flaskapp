@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}  
+<div class="login-page">
+  <div class="form">
+    <form class="register-form" style="display:block;" method="POST" action="{{ url_for('register') }}">
+      <input type="text" placeholder="name" id="username" name="username" required />
+      <input type="password" placeholder="password" id="password" name="password" required/>
+      <input type="email" placeholder="Email address" id="email" name="email" required/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="{{ url_for('login') }}">Sign In</a></p>
+    </form>{{ url_for('login') }}
+</div>
+{% endblock %}
